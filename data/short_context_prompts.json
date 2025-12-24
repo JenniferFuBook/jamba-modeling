@@ -1,0 +1,34 @@
+{
+  "prompts": [
+    {
+      "id": "short_completion",
+      "text": "The quick brown fox",
+      "max_tokens": 20,
+      "category": "short"
+    },
+    {
+      "id": "medium_story",
+      "text": "Once upon a time in a distant land, there lived",
+      "max_tokens": 50,
+      "category": "medium"
+    },
+    {
+      "id": "long_generation",
+      "text": "Write a detailed explanation of how machine learning works:",
+      "max_tokens": 100,
+      "category": "long"
+    },
+    {
+      "id": "code_generation",
+      "text": "def fibonacci(n):",
+      "max_tokens": 50,
+      "category": "code"
+    },
+    {
+      "id": "qa_format",
+      "text": "Question: What is the capital of France?\nAnswer:",
+      "max_tokens": 30,
+      "category": "qa"
+    }
+  ]
+}

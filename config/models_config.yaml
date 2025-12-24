@@ -1,0 +1,19 @@
+models:
+  gpt2-small:
+    model_id: "gpt2"
+    type: "transformer"
+    params: 124000000
+    expected_memory_mb: 600
+
+  jamba-tiny:
+    model_id: "ai21labs/Jamba-tiny-dev"
+    type: "hybrid-ssm-transformer"
+    params: 319000000
+    expected_memory_mb: 1200
+    special_args:
+      use_mamba_kernels: false
+      trust_remote_code: false
+
+device:
+  type: "cpu"
+  torch_dtype: "float32"

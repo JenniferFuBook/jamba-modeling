@@ -1,0 +1,18 @@
+benchmarking:
+  warmup_iterations: 3
+  benchmark_iterations: 20
+  random_seed: 42
+
+  generation:
+    temperature: 0.7
+    top_p: 0.9
+    do_sample: true
+    repetition_penalty: 1.1
+
+  memory:
+    sampling_interval_ms: 100
+
+  output:
+    formats: ["json", "csv", "markdown", "console"]
+    results_dir: "./results"
+    include_per_prompt_details: true
