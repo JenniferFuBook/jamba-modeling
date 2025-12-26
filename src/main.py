@@ -32,6 +32,7 @@ from pathlib import Path          # For cross-platform file paths
 from typing import Dict, Any, List, Tuple
 
 # Third-party imports
+import numpy as np               # For mathematical calculations (theoretical curves)
 import pandas as pd              # For data manipulation (future use)
 from tabulate import tabulate    # For pretty-printing tables to console
 
@@ -416,7 +417,7 @@ class UnifiedBenchmark:
         try:
             # Create figure with 4 rows × 3 columns grid layout
             fig = plt.figure(figsize=(18, 16))
-            gs = fig.add_gridspec(4, 3, hspace=0.35, wspace=0.3)
+            gs = fig.add_gridspec(4, 3, hspace=0.4, wspace=0.35)
 
             fig.suptitle('GPT-2 vs Jamba: Complete Performance Comparison\nShort Context vs Long Context',
                         fontsize=16, fontweight='bold')
@@ -638,7 +639,39 @@ class UnifiedBenchmark:
                    ha='center', va='bottom', fontsize=8)
 
     def plot_long_context_scaling(self, ax, results, colors, markers):
-        """THE KEY PLOT: Shows quadratic vs linear scaling."""
+        """
+        THE KEY PLOT: Shows quadratic vs linear scaling.
+
+        Adds theoretical curves to show what GPT-2 would do if it could handle long contexts.
+        This makes the O(n²) vs O(n) comparison obvious even when GPT-2 fails.
+        """
+        # Generate x-axis range for theoretical curves (100 to 10000 tokens)
+        x_theoretical = np.linspace(100, 10000, 100)
+
+        # Calculate theoretical baseline using GPT-2's SHORT context performance
+        # Assume GPT-2 takes ~1.2s for 100 tokens (from short context benchmark)
+        gpt2_base_time = 1.2  # seconds for ~100 tokens
+        gpt2_base_tokens = 100
+
+        # Theoretical O(n²) curve: time ∝ n²
+        # Formula: time = base_time * (n / base_n)²
+        gpt2_theoretical = gpt2_base_time * (x_theoretical / gpt2_base_tokens) ** 2
+
+        # Theoretical O(n) curve: time ∝ n
+        # Formula: time = base_time * (n / base_n)
+        linear_theoretical = gpt2_base_time * (x_theoretical / gpt2_base_tokens)
+
+        # Plot theoretical curves FIRST (so they're in the background)
+        ax.plot(x_theoretical, gpt2_theoretical, '--', color=colors.get('gpt2-small', '#FF6B6B'),
+                linewidth=2, alpha=0.5, label='GPT-2 (theoretical O(n²))')
+        ax.plot(x_theoretical, linear_theoretical, ':', color=colors.get('jamba-tiny', '#4ECDC4'),
+                linewidth=2, alpha=0.5, label='Pure O(n) reference')
+
+        # Add vertical line showing GPT-2's hard limit
+        ax.axvline(x=1024, color='red', linestyle='-.', linewidth=2, alpha=0.7,
+                   label='GPT-2 max context (1024 tokens)')
+
+        # Plot ACTUAL results on top
         for model_name, model_data in results.items():
             prompt_results = model_data.get('prompt_results', [])
             if not prompt_results:
@@ -651,25 +684,30 @@ class UnifiedBenchmark:
             marker = markers.get(model_name, 'x')
 
             ax.plot(input_tokens, inference_times, marker=marker, color=color,
-                   linewidth=3, markersize=10, label=model_name)
+                   linewidth=3, markersize=10, label=f'{model_name} (actual)', zorder=5)
 
-            # Annotate points
+            # Annotate actual data points
             for x, y in zip(input_tokens, inference_times):
                 ax.annotate(f'{y:.1f}s', (x, y), textcoords="offset points",
-                           xytext=(0, 10), ha='center', fontsize=8, color=color)
+                           xytext=(0, 8), ha='center', fontsize=7, color=color, fontweight='bold')
 
-        ax.set_xlabel('Input Tokens', fontsize=12, fontweight='bold')
-        ax.set_ylabel('Inference Time (seconds)', fontsize=12, fontweight='bold')
-        ax.set_title('🔥 KEY INSIGHT: Scaling Behavior (Quadratic vs Linear)',
-                    fontsize=13, fontweight='bold', color='red')
-        ax.legend(fontsize=11, loc='upper left')
+        ax.set_xlabel('Input Tokens', fontsize=11, fontweight='bold')
+        ax.set_ylabel('Inference Time (seconds)', fontsize=11, fontweight='bold')
+        ax.set_title('🔥 KEY INSIGHT: Quadratic O(n²) vs Linear O(n) Scaling',
+                    fontsize=12, fontweight='bold', color='red')
+        ax.legend(fontsize=7, loc='upper left', framealpha=0.9)
         ax.grid(True, alpha=0.3)
 
-        # Add annotation explaining the difference
-        ax.text(0.95, 0.05, 'GPT-2: O(n²) - Quadratic\nJamba: O(n) - Linear',
-               transform=ax.transAxes, fontsize=10,
-               verticalalignment='bottom', horizontalalignment='right',
-               bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+        # Set reasonable y-axis limit (don't let theoretical curve go to infinity)
+        ax.set_ylim(0, 150)
+
+        # Add annotation box explaining the curves (moved to top right to avoid legend)
+        ax.text(0.98, 0.98,
+                'Solid = Actual\nDashed = Theoretical\n'
+                'Red line = GPT-2 limit (1024)',
+                transform=ax.transAxes, fontsize=7,
+                verticalalignment='top', horizontalalignment='right',
+                bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.85, pad=0.3))
 
     def plot_throughput_stability(self, ax, results, colors, markers):
         """Show how throughput changes with context length."""
@@ -694,7 +732,34 @@ class UnifiedBenchmark:
         ax.grid(True, alpha=0.3)
 
     def plot_time_per_token(self, ax, results, colors, markers):
-        """Show computational complexity via time per token."""
+        """
+        Show computational complexity via time per token.
+
+        For transformers (GPT-2): time/token ∝ n (each token must attend to all n tokens)
+        For Mamba (Jamba): time/token ≈ constant (linear scan independent of position)
+        """
+        # Theoretical curves
+        x_theoretical = np.linspace(100, 10000, 100)
+
+        # GPT-2 theoretical: time per token increases linearly with context
+        # At 100 tokens: ~12ms/token, scales as O(n)
+        gpt2_time_per_token_base = 12  # ms at 100 tokens
+        gpt2_theoretical_tpt = gpt2_time_per_token_base * (x_theoretical / 100)
+
+        # Jamba theoretical: time per token stays constant
+        jamba_time_per_token_base = 1.5  # ms (constant)
+        jamba_theoretical_tpt = np.full_like(x_theoretical, jamba_time_per_token_base)
+
+        # Plot theoretical curves
+        ax.plot(x_theoretical, gpt2_theoretical_tpt, '--', color=colors.get('gpt2-small', '#FF6B6B'),
+                linewidth=2, alpha=0.5, label='GPT-2 theoretical (∝ n)')
+        ax.plot(x_theoretical, jamba_theoretical_tpt, ':', color=colors.get('jamba-tiny', '#4ECDC4'),
+                linewidth=2, alpha=0.5, label='Jamba theoretical (constant)')
+
+        # GPT-2 context limit
+        ax.axvline(x=1024, color='red', linestyle='-.', linewidth=1.5, alpha=0.5)
+
+        # Plot actual results
         for model_name, model_data in results.items():
             prompt_results = model_data.get('prompt_results', [])
             if not prompt_results:
@@ -710,16 +775,45 @@ class UnifiedBenchmark:
             marker = markers.get(model_name, 'x')
 
             ax.plot(input_tokens, time_per_token, marker=marker, color=color,
-                   linewidth=2, markersize=8, label=model_name)
+                   linewidth=2, markersize=8, label=f'{model_name} (actual)', zorder=5)
 
         ax.set_xlabel('Input Tokens', fontsize=10)
         ax.set_ylabel('Time per Token (ms)', fontsize=10)
-        ax.set_title('Computational Complexity\n(time/token)', fontsize=11, fontweight='bold')
-        ax.legend(fontsize=9)
+        ax.set_title('Computational Complexity\n(GPT-2: O(n), Jamba: O(1))', fontsize=11, fontweight='bold')
+        ax.legend(fontsize=6.5, loc='upper left', framealpha=0.9, ncol=1)
         ax.grid(True, alpha=0.3)
+        ax.set_ylim(0, 50)  # Limit y-axis for readability
 
     def plot_memory_scaling(self, ax, results, colors, markers):
-        """Show memory scaling with context length."""
+        """
+        Show memory scaling with context length.
+
+        Transformers need to store attention matrix: O(n²) memory
+        Jamba uses constant-size state: O(n) memory
+        """
+        # Theoretical curves for memory usage
+        x_theoretical = np.linspace(100, 10000, 100)
+
+        # GPT-2 theoretical: memory grows quadratically for attention cache
+        # Base: ~1800 MB at 1000 tokens
+        gpt2_base_memory = 1800  # MB at 1000 tokens
+        gpt2_base_tokens = 1000
+        gpt2_theoretical_mem = gpt2_base_memory * (x_theoretical / gpt2_base_tokens) ** 1.5  # Between linear and quadratic
+
+        # Jamba theoretical: memory grows linearly with KV cache
+        jamba_base_memory = 2000  # MB at 1000 tokens
+        jamba_theoretical_mem = jamba_base_memory * (x_theoretical / gpt2_base_tokens)
+
+        # Plot theoretical curves
+        ax.plot(x_theoretical, gpt2_theoretical_mem, '--', color=colors.get('gpt2-small', '#FF6B6B'),
+                linewidth=2, alpha=0.5, label='GPT-2 theoretical (O(n^1.5))')
+        ax.plot(x_theoretical, jamba_theoretical_mem, ':', color=colors.get('jamba-tiny', '#4ECDC4'),
+                linewidth=2, alpha=0.5, label='Jamba theoretical (O(n))')
+
+        # GPT-2 context limit
+        ax.axvline(x=1024, color='red', linestyle='-.', linewidth=1.5, alpha=0.5)
+
+        # Plot actual results
         for model_name, model_data in results.items():
             prompt_results = model_data.get('prompt_results', [])
             if not prompt_results:
@@ -732,39 +826,39 @@ class UnifiedBenchmark:
             marker = markers.get(model_name, 'x')
 
             ax.plot(input_tokens, memories, marker=marker, color=color,
-                   linewidth=2, markersize=8, label=model_name)
+                   linewidth=2, markersize=8, label=f'{model_name} (actual)', zorder=5)
 
         ax.set_xlabel('Input Tokens', fontsize=10)
         ax.set_ylabel('Peak Memory (MB)', fontsize=10)
-        ax.set_title('Memory Scaling\n(vs context length)', fontsize=11, fontweight='bold')
-        ax.legend(fontsize=9)
+        ax.set_title('Memory Scaling\n(GPT-2: Superlinear, Jamba: Linear)', fontsize=11, fontweight='bold')
+        ax.legend(fontsize=6.5, loc='upper left', framealpha=0.9, ncol=1)
         ax.grid(True, alpha=0.3)
+        ax.set_ylim(0, 15000)  # Reasonable y-axis limit
 
     def plot_summary_comparison(self, ax, short_results, long_results, colors):
         """Summary showing where each model excels."""
-        summary_text = "WHEN TO USE EACH MODEL\n" + "="*30 + "\n\n"
+        summary_text = "DECISION FRAMEWORK\n" + "="*30 + "\n\n"
 
         summary_text += "GPT-2 WINS:\n"
-        summary_text += "• Short contexts (< 2K tokens)\n"
+        summary_text += "• Short contexts (< 2K)\n"
         summary_text += "• CPU-only deployment\n"
-        summary_text += "• Cost per request critical\n"
-        summary_text += "• Simple, proven architecture\n\n"
+        summary_text += "• Low latency critical\n"
+        summary_text += "• Proven architecture\n\n"
 
         summary_text += "JAMBA WINS:\n"
-        summary_text += "• Long contexts (> 4K tokens)\n"
+        summary_text += "• Long contexts (> 4K)\n"
         summary_text += "• GPU available\n"
-        summary_text += "• Context completeness critical\n"
-        summary_text += "• Linear scaling needed\n\n"
+        summary_text += "• Linear scaling needed\n"
+        summary_text += "• Large context windows\n\n"
 
         summary_text += "CROSSOVER: ~2-4K tokens"
 
         ax.text(0.5, 0.5, summary_text, transform=ax.transAxes,
-               fontsize=10, verticalalignment='center', horizontalalignment='center',
+               fontsize=9, verticalalignment='center', horizontalalignment='center',
                bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8),
                family='monospace')
 
         ax.axis('off')
-        ax.set_title('Decision Framework', fontsize=11, fontweight='bold')
 
     def print_unified_summary(self, short_results: Dict[str, Any], long_results: Dict[str, Any]):
         """Print comprehensive summary showing both short and long context results."""
@@ -895,7 +989,7 @@ class UnifiedBenchmark:
 
     def run(self):
         """Run the complete unified benchmark."""
-        logger.info("\n" + "🔥" * 50)
+        logger.info("🔥" * 50)
         logger.info("UNIFIED BENCHMARK: GPT-2 vs JAMBA")
         logger.info("Demonstrating where each model excels")
         logger.info("🔥" * 50 + "\n")

@@ -41,10 +41,6 @@ models/
 *.bin
 *.safetensors
 
-# Results
-results/*
-!results/.gitkeep
-
 # Logs
 *.log
 logs/

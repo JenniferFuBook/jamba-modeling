@@ -1,0 +1,3584 @@
+{
+  "metadata": {
+    "timestamp": "2025-12-26T20:59:58.685411",
+    "benchmark_type": "unified",
+    "environment": {
+      "type": "cpu",
+      "torch_dtype": "float32"
+    }
+  },
+  "short_context_results": {
+    "gpt2-small": {
+      "model_id": "gpt2",
+      "load_time": 1.9567,
+      "model_size": {
+        "total_parameters": 124439808,
+        "trainable_parameters": 124439808,
+        "model_size_mb": 474.7,
+        "dtype": "torch.float32"
+      },
+      "prompt_results": [
+        {
+          "latency": {
+            "mean": 0.4744,
+            "median": 0.4514,
+            "std": 0.1063,
+            "min": 0.3949,
+            "max": 0.9117,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 52.15,
+            "median": 53.17,
+            "std": 7.24,
+            "min": 26.32,
+            "max": 60.78
+          },
+          "avg_total_tokens": 24.0,
+          "avg_generated_tokens": 20.0,
+          "prompt": "The quick brown fox",
+          "max_tokens": 20,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 0.41188749999997754,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 58.27,
+              "memory": {
+                "peak_rss_mb": 1098.04,
+                "peak_vms_mb": 3798.04,
+                "avg_rss_mb": 1008.88,
+                "avg_vms_mb": 3709.69,
+                "delta_rss_mb": 733.66,
+                "delta_vms_mb": 2319.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.5177332079999815,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 46.36,
+              "memory": {
+                "peak_rss_mb": 1124.11,
+                "peak_vms_mb": 3798.04,
+                "avg_rss_mb": 1035.79,
+                "avg_vms_mb": 3724.41,
+                "delta_rss_mb": 759.73,
+                "delta_vms_mb": 2319.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.41947145799997543,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 57.21,
+              "memory": {
+                "peak_rss_mb": 1118.16,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1023.08,
+                "avg_vms_mb": 3764.74,
+                "delta_rss_mb": 753.79,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.453637791999995,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 52.91,
+              "memory": {
+                "peak_rss_mb": 1104.21,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1007.65,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 739.83,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.3948618750000037,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 60.78,
+              "memory": {
+                "peak_rss_mb": 978.99,
+                "peak_vms_mb": 3682.79,
+                "avg_rss_mb": 978.98,
+                "avg_vms_mb": 3682.79,
+                "delta_rss_mb": 614.61,
+                "delta_vms_mb": 2204.68,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.40235250099999575,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 59.65,
+              "memory": {
+                "peak_rss_mb": 1126.28,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1052.64,
+                "avg_vms_mb": 3756.41,
+                "delta_rss_mb": 761.9,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.43884758400002966,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 54.69,
+              "memory": {
+                "peak_rss_mb": 1070.31,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 997.31,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 705.93,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.46204037500001505,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 51.94,
+              "memory": {
+                "peak_rss_mb": 979.09,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 979.08,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 614.71,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.44792212499999096,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 53.58,
+              "memory": {
+                "peak_rss_mb": 1020.36,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 987.36,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 655.98,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.44041545800001813,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 54.49,
+              "memory": {
+                "peak_rss_mb": 1110.38,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1029.62,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 746.0,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.5068932499999619,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 47.35,
+              "memory": {
+                "peak_rss_mb": 1104.39,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1017.22,
+                "avg_vms_mb": 3731.87,
+                "delta_rss_mb": 740.02,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.44914408400001093,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 53.43,
+              "memory": {
+                "peak_rss_mb": 1126.41,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1008.61,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 762.03,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.476342499999987,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 50.38,
+              "memory": {
+                "peak_rss_mb": 1005.93,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 984.52,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 641.55,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.46510808399995085,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 51.6,
+              "memory": {
+                "peak_rss_mb": 1126.44,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1008.64,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 762.06,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.4738999999999578,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 50.64,
+              "memory": {
+                "peak_rss_mb": 1126.45,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1055.94,
+                "avg_vms_mb": 3771.14,
+                "delta_rss_mb": 762.07,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.4849455419999913,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 49.49,
+              "memory": {
+                "peak_rss_mb": 1126.46,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1033.31,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 762.09,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.5043371250000064,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 47.59,
+              "memory": {
+                "peak_rss_mb": 1126.49,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1018.13,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 762.11,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.9116844170000036,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 26.32,
+              "memory": {
+                "peak_rss_mb": 1110.63,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 993.9,
+                "avg_vms_mb": 3699.15,
+                "delta_rss_mb": 746.25,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.3969973330000016,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 60.45,
+              "memory": {
+                "peak_rss_mb": 1126.63,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1016.19,
+                "avg_vms_mb": 3719.6,
+                "delta_rss_mb": 762.25,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.4299580830000309,
+              "total_tokens": 24,
+              "generated_tokens": 20,
+              "throughput": 55.82,
+              "memory": {
+                "peak_rss_mb": 1126.66,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1091.6,
+                "avg_vms_mb": 3800.59,
+                "delta_rss_mb": 762.28,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            }
+          ],
+          "prompt_id": "short_completion",
+          "category": "short"
+        },
+        {
+          "latency": {
+            "mean": 1.0231,
+            "median": 1.0234,
+            "std": 0.0454,
+            "min": 0.8551,
+            "max": 1.0791,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 59.17,
+            "median": 59.59,
+            "std": 1.37,
+            "min": 56.53,
+            "max": 61.5
+          },
+          "avg_total_tokens": 60.5,
+          "avg_generated_tokens": 49.5,
+          "prompt": "Once upon a time in a distant land, there lived",
+          "max_tokens": 50,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 0.8551196669999968,
+              "total_tokens": 51,
+              "generated_tokens": 40,
+              "throughput": 59.64,
+              "memory": {
+                "peak_rss_mb": 1129.15,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1033.79,
+                "avg_vms_mb": 3748.23,
+                "delta_rss_mb": 764.77,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0790819169999963,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 56.53,
+              "memory": {
+                "peak_rss_mb": 1103.17,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 992.94,
+                "avg_vms_mb": 3696.18,
+                "delta_rss_mb": 738.79,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0244862929999954,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 59.54,
+              "memory": {
+                "peak_rss_mb": 1129.18,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1019.36,
+                "avg_vms_mb": 3722.95,
+                "delta_rss_mb": 764.8,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.043612625000037,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 58.45,
+              "memory": {
+                "peak_rss_mb": 1119.19,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1016.94,
+                "avg_vms_mb": 3736.33,
+                "delta_rss_mb": 754.81,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0518604579999646,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 57.99,
+              "memory": {
+                "peak_rss_mb": 1129.21,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1049.74,
+                "avg_vms_mb": 3776.49,
+                "delta_rss_mb": 764.84,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.001579167999978,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 60.9,
+              "memory": {
+                "peak_rss_mb": 1129.25,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1008.44,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 764.87,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0594931670000278,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 57.57,
+              "memory": {
+                "peak_rss_mb": 1129.26,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1033.19,
+                "avg_vms_mb": 3736.33,
+                "delta_rss_mb": 764.88,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.9918842929999983,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 61.5,
+              "memory": {
+                "peak_rss_mb": 1105.27,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1003.47,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 740.89,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0199574170000005,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 59.81,
+              "memory": {
+                "peak_rss_mb": 1055.29,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 988.7,
+                "avg_vms_mb": 3696.18,
+                "delta_rss_mb": 690.91,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0121285010000065,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 60.27,
+              "memory": {
+                "peak_rss_mb": 1091.29,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 996.89,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 726.91,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0184179589999758,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 59.9,
+              "memory": {
+                "peak_rss_mb": 1129.3,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1029.53,
+                "avg_vms_mb": 3763.11,
+                "delta_rss_mb": 764.93,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.014368208999997,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 60.14,
+              "memory": {
+                "peak_rss_mb": 1129.32,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1033.25,
+                "avg_vms_mb": 3763.11,
+                "delta_rss_mb": 764.94,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0250754999999572,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 59.51,
+              "memory": {
+                "peak_rss_mb": 1129.33,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1029.26,
+                "avg_vms_mb": 3749.72,
+                "delta_rss_mb": 764.95,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0223558759999491,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 59.67,
+              "memory": {
+                "peak_rss_mb": 1129.34,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1023.46,
+                "avg_vms_mb": 3736.33,
+                "delta_rss_mb": 764.96,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0488286249999987,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 58.16,
+              "memory": {
+                "peak_rss_mb": 1129.36,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1046.31,
+                "avg_vms_mb": 3749.72,
+                "delta_rss_mb": 764.98,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0689549589999956,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 57.07,
+              "memory": {
+                "peak_rss_mb": 1129.37,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1019.37,
+                "avg_vms_mb": 3736.33,
+                "delta_rss_mb": 764.99,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0045682919999877,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 60.72,
+              "memory": {
+                "peak_rss_mb": 1129.37,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1018.55,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 764.99,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0512002919999759,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 58.03,
+              "memory": {
+                "peak_rss_mb": 1129.39,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1032.77,
+                "avg_vms_mb": 3736.33,
+                "delta_rss_mb": 765.01,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.062156583999979,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 57.43,
+              "memory": {
+                "peak_rss_mb": 1129.4,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1045.92,
+                "avg_vms_mb": 3763.11,
+                "delta_rss_mb": 765.02,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0071131249999894,
+              "total_tokens": 61,
+              "generated_tokens": 50,
+              "throughput": 60.57,
+              "memory": {
+                "peak_rss_mb": 1107.41,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1017.34,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 743.04,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            }
+          ],
+          "prompt_id": "medium_story",
+          "category": "medium"
+        },
+        {
+          "latency": {
+            "mean": 1.5954,
+            "median": 2.0272,
+            "std": 0.6967,
+            "min": 0.2613,
+            "max": 2.2313,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 55.99,
+            "median": 53.91,
+            "std": 8.99,
+            "min": 41.55,
+            "max": 80.36
+          },
+          "avg_total_tokens": 84.85,
+          "avg_generated_tokens": 74.85,
+          "prompt": "Write a detailed explanation of how machine learning works:",
+          "max_tokens": 100,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 0.2613194999999564,
+              "total_tokens": 21,
+              "generated_tokens": 11,
+              "throughput": 80.36,
+              "memory": {
+                "peak_rss_mb": 982.46,
+                "peak_vms_mb": 3682.79,
+                "avg_rss_mb": 982.46,
+                "avg_vms_mb": 3682.79,
+                "delta_rss_mb": 618.08,
+                "delta_vms_mb": 2204.68,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.014436960000012,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 54.61,
+              "memory": {
+                "peak_rss_mb": 1129.71,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1031.32,
+                "avg_vms_mb": 3756.41,
+                "delta_rss_mb": 765.33,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.026219291000018,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 54.29,
+              "memory": {
+                "peak_rss_mb": 1129.71,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1010.51,
+                "avg_vms_mb": 3712.24,
+                "delta_rss_mb": 765.33,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.0837837509999986,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 52.79,
+              "memory": {
+                "peak_rss_mb": 1107.72,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 988.43,
+                "avg_vms_mb": 3689.8,
+                "delta_rss_mb": 743.34,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.0980039590000388,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 52.43,
+              "memory": {
+                "peak_rss_mb": 1129.72,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1023.88,
+                "avg_vms_mb": 3745.9,
+                "delta_rss_mb": 765.34,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.206771625999977,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 49.85,
+              "memory": {
+                "peak_rss_mb": 1129.92,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 996.05,
+                "avg_vms_mb": 3702.87,
+                "delta_rss_mb": 765.54,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.0454928760000257,
+              "total_tokens": 104,
+              "generated_tokens": 94,
+              "throughput": 50.84,
+              "memory": {
+                "peak_rss_mb": 1129.92,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1007.86,
+                "avg_vms_mb": 3717.85,
+                "delta_rss_mb": 765.54,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.516127460000007,
+              "total_tokens": 63,
+              "generated_tokens": 53,
+              "throughput": 41.55,
+              "memory": {
+                "peak_rss_mb": 1129.92,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1002.47,
+                "avg_vms_mb": 3719.6,
+                "delta_rss_mb": 765.54,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.7246350010000242,
+              "total_tokens": 34,
+              "generated_tokens": 24,
+              "throughput": 46.92,
+              "memory": {
+                "peak_rss_mb": 982.67,
+                "peak_vms_mb": 3682.79,
+                "avg_rss_mb": 982.67,
+                "avg_vms_mb": 3682.79,
+                "delta_rss_mb": 618.29,
+                "delta_vms_mb": 2204.68,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.0929192090000015,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 52.56,
+              "memory": {
+                "peak_rss_mb": 1129.92,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1048.42,
+                "avg_vms_mb": 3780.96,
+                "delta_rss_mb": 765.54,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.037244460000011,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 53.99,
+              "memory": {
+                "peak_rss_mb": 1129.92,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1029.43,
+                "avg_vms_mb": 3738.88,
+                "delta_rss_mb": 765.54,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.043509042999972,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 53.83,
+              "memory": {
+                "peak_rss_mb": 1129.94,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1028.46,
+                "avg_vms_mb": 3752.91,
+                "delta_rss_mb": 765.56,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.9836711680000008,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 55.45,
+              "memory": {
+                "peak_rss_mb": 1129.95,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1027.41,
+                "avg_vms_mb": 3741.69,
+                "delta_rss_mb": 765.57,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6573460829999931,
+              "total_tokens": 41,
+              "generated_tokens": 31,
+              "throughput": 62.37,
+              "memory": {
+                "peak_rss_mb": 1129.97,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1024.79,
+                "avg_vms_mb": 3724.86,
+                "delta_rss_mb": 765.59,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.028140042000018,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 54.24,
+              "memory": {
+                "peak_rss_mb": 1129.98,
+                "peak_vms_mb": 3830.04,
+                "avg_rss_mb": 1027.38,
+                "avg_vms_mb": 3731.87,
+                "delta_rss_mb": 765.61,
+                "delta_vms_mb": 2351.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.231348876000027,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 49.3,
+              "memory": {
+                "peak_rss_mb": 1106.02,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1004.15,
+                "avg_vms_mb": 3730.05,
+                "delta_rss_mb": 741.64,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.8184585010000092,
+              "total_tokens": 50,
+              "generated_tokens": 40,
+              "throughput": 61.09,
+              "memory": {
+                "peak_rss_mb": 1130.04,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1013.95,
+                "avg_vms_mb": 3716.51,
+                "delta_rss_mb": 765.66,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.5984632920000195,
+              "total_tokens": 39,
+              "generated_tokens": 29,
+              "throughput": 65.17,
+              "memory": {
+                "peak_rss_mb": 1130.04,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1007.33,
+                "avg_vms_mb": 3732.87,
+                "delta_rss_mb": 765.66,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 2.1122304170000348,
+              "total_tokens": 110,
+              "generated_tokens": 100,
+              "throughput": 52.08,
+              "memory": {
+                "peak_rss_mb": 1130.06,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1033.93,
+                "avg_vms_mb": 3767.93,
+                "delta_rss_mb": 765.68,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.3285417090000351,
+              "total_tokens": 25,
+              "generated_tokens": 15,
+              "throughput": 76.09,
+              "memory": {
+                "peak_rss_mb": 1124.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1066.26,
+                "avg_vms_mb": 3794.23,
+                "delta_rss_mb": 759.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            }
+          ],
+          "prompt_id": "long_generation",
+          "category": "long"
+        },
+        {
+          "latency": {
+            "mean": 1.0537,
+            "median": 1.0132,
+            "std": 0.0969,
+            "min": 0.9875,
+            "max": 1.4123,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 54.09,
+            "median": 55.28,
+            "std": 4.14,
+            "min": 40.36,
+            "max": 57.57
+          },
+          "avg_total_tokens": 56.6,
+          "avg_generated_tokens": 49.6,
+          "prompt": "def fibonacci(n):",
+          "max_tokens": 50,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 1.0073113340000077,
+              "total_tokens": 55,
+              "generated_tokens": 48,
+              "throughput": 54.6,
+              "memory": {
+                "peak_rss_mb": 1130.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1030.21,
+                "avg_vms_mb": 3742.69,
+                "delta_rss_mb": 765.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0133598750000488,
+              "total_tokens": 55,
+              "generated_tokens": 48,
+              "throughput": 54.27,
+              "memory": {
+                "peak_rss_mb": 1130.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1019.4,
+                "avg_vms_mb": 3750.72,
+                "delta_rss_mb": 765.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.1364796670000032,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 50.15,
+              "memory": {
+                "peak_rss_mb": 1112.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 993.6,
+                "avg_vms_mb": 3708.33,
+                "delta_rss_mb": 747.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0092008749999763,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 56.48,
+              "memory": {
+                "peak_rss_mb": 1130.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1052.46,
+                "avg_vms_mb": 3772.14,
+                "delta_rss_mb": 765.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0042160000000422,
+              "total_tokens": 56,
+              "generated_tokens": 49,
+              "throughput": 55.76,
+              "memory": {
+                "peak_rss_mb": 1130.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1024.61,
+                "avg_vms_mb": 3727.96,
+                "delta_rss_mb": 765.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.9913075430000049,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 57.5,
+              "memory": {
+                "peak_rss_mb": 1130.08,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1010.08,
+                "avg_vms_mb": 3727.96,
+                "delta_rss_mb": 765.7,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.992891874999998,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 57.41,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1014.61,
+                "avg_vms_mb": 3727.96,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0073420010000405,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 56.58,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1023.01,
+                "avg_vms_mb": 3727.96,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0040578339999797,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 56.77,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1010.7,
+                "avg_vms_mb": 3742.69,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0402007920000074,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 54.8,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1053.7,
+                "avg_vms_mb": 3764.11,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0505995420000431,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 54.25,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1029.65,
+                "avg_vms_mb": 3737.33,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0131032089999508,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 56.26,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 999.23,
+                "avg_vms_mb": 3710.56,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.4122974169999907,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 40.36,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1011.68,
+                "avg_vms_mb": 3715.34,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.194762333999961,
+              "total_tokens": 55,
+              "generated_tokens": 48,
+              "throughput": 46.03,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1019.65,
+                "avg_vms_mb": 3745.14,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.9901842920000377,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 57.57,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1003.49,
+                "avg_vms_mb": 3713.24,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0194144179999967,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 55.91,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1009.84,
+                "avg_vms_mb": 3737.33,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0596929170000067,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 53.79,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1031.41,
+                "avg_vms_mb": 3764.11,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.076224959000001,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 52.96,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1021.58,
+                "avg_vms_mb": 3737.33,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.0629913749999673,
+              "total_tokens": 57,
+              "generated_tokens": 50,
+              "throughput": 53.62,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1007.79,
+                "avg_vms_mb": 3723.95,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.9874734170000465,
+              "total_tokens": 56,
+              "generated_tokens": 49,
+              "throughput": 56.71,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1032.06,
+                "avg_vms_mb": 3757.41,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            }
+          ],
+          "prompt_id": "code_generation",
+          "category": "code"
+        },
+        {
+          "latency": {
+            "mean": 0.6809,
+            "median": 0.6339,
+            "std": 0.1301,
+            "min": 0.5852,
+            "max": 1.0955,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 63.35,
+            "median": 66.26,
+            "std": 8.82,
+            "min": 38.34,
+            "max": 71.77
+          },
+          "avg_total_tokens": 42.0,
+          "avg_generated_tokens": 30.0,
+          "prompt": "Question: What is the capital of France?\nAnswer:",
+          "max_tokens": 30,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 0.6020196669999791,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 69.77,
+              "memory": {
+                "peak_rss_mb": 1128.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1007.05,
+                "avg_vms_mb": 3732.87,
+                "delta_rss_mb": 763.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.5976432080000222,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 70.28,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1027.92,
+                "avg_vms_mb": 3732.87,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6488454999999931,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 64.73,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1023.2,
+                "avg_vms_mb": 3725.86,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6366607919999865,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 65.97,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1003.88,
+                "avg_vms_mb": 3704.82,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6206479580000064,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 67.67,
+              "memory": {
+                "peak_rss_mb": 1024.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 988.73,
+                "avg_vms_mb": 3704.82,
+                "delta_rss_mb": 659.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6207157919999986,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 67.66,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1024.91,
+                "avg_vms_mb": 3767.93,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6133231670000328,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 68.48,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1029.09,
+                "avg_vms_mb": 3746.9,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6677422089999823,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 62.9,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1046.13,
+                "avg_vms_mb": 3767.93,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6412173339999754,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 65.5,
+              "memory": {
+                "peak_rss_mb": 1104.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1016.91,
+                "avg_vms_mb": 3746.9,
+                "delta_rss_mb": 739.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6339407090000009,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 66.25,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1053.84,
+                "avg_vms_mb": 3767.93,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.5852203329999952,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 71.77,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1045.46,
+                "avg_vms_mb": 3757.41,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6039354580000236,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 69.54,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1040.8,
+                "avg_vms_mb": 3757.41,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6143700840000292,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 68.36,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1076.02,
+                "avg_vms_mb": 3788.97,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 1.095476208999969,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 38.34,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1006.52,
+                "avg_vms_mb": 3710.56,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6338659169999801,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 66.26,
+              "memory": {
+                "peak_rss_mb": 1096.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1006.63,
+                "avg_vms_mb": 3725.86,
+                "delta_rss_mb": 731.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.7725941250000119,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 54.36,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1049.71,
+                "avg_vms_mb": 3757.41,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.608531207999988,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 69.02,
+              "memory": {
+                "peak_rss_mb": 1128.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1024.34,
+                "avg_vms_mb": 3725.86,
+                "delta_rss_mb": 763.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.6716867080000384,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 62.53,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1003.88,
+                "avg_vms_mb": 3704.82,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.7640263749999576,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 54.97,
+              "memory": {
+                "peak_rss_mb": 1130.09,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 1019.65,
+                "avg_vms_mb": 3720.6,
+                "delta_rss_mb": 765.71,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            },
+            {
+              "inference_time": 0.9851942919999601,
+              "total_tokens": 42,
+              "generated_tokens": 30,
+              "throughput": 42.63,
+              "memory": {
+                "peak_rss_mb": 982.84,
+                "peak_vms_mb": 3831.04,
+                "avg_rss_mb": 982.84,
+                "avg_vms_mb": 3698.51,
+                "delta_rss_mb": 618.46,
+                "delta_vms_mb": 2352.93,
+                "baseline_rss_mb": 364.38,
+                "baseline_vms_mb": 1478.11
+              }
+            }
+          ],
+          "prompt_id": "qa_format",
+          "category": "qa"
+        }
+      ],
+      "overall_stats": {
+        "latency": {
+          "mean": 0.9655,
+          "median": 1.0231,
+          "std": 0.3821,
+          "min": 0.4744,
+          "max": 1.5954,
+          "count": 5
+        },
+        "memory": {
+          "baseline_mb": 462.25,
+          "peak_rss_mb": 1130.09,
+          "avg_peak_rss_mb": 1113.48
+        },
+        "throughput": {
+          "mean": 56.95,
+          "min": 52.15,
+          "max": 63.35
+        }
+      }
+    },
+    "jamba-tiny": {
+      "model_id": "ai21labs/Jamba-tiny-dev",
+      "load_time": 1.0612,
+      "model_size": {
+        "total_parameters": 318688640,
+        "trainable_parameters": 318688640,
+        "model_size_mb": 1215.7,
+        "dtype": "torch.float32"
+      },
+      "prompt_results": [
+        {
+          "latency": {
+            "mean": 0.7247,
+            "median": 0.6967,
+            "std": 0.0641,
+            "min": 0.6672,
+            "max": 0.9562,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 34.72,
+            "median": 35.88,
+            "std": 2.61,
+            "min": 26.15,
+            "max": 37.47
+          },
+          "avg_total_tokens": 25.0,
+          "avg_generated_tokens": 20.0,
+          "prompt": "The quick brown fox",
+          "max_tokens": 20,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 0.6864344169999868,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.42,
+              "memory": {
+                "peak_rss_mb": 1683.08,
+                "peak_vms_mb": 4568.74,
+                "avg_rss_mb": 1682.44,
+                "avg_vms_mb": 4449.88,
+                "delta_rss_mb": 1220.27,
+                "delta_vms_mb": 1407.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.701090000000022,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 35.66,
+              "memory": {
+                "peak_rss_mb": 1779.21,
+                "peak_vms_mb": 4568.74,
+                "avg_rss_mb": 1710.55,
+                "avg_vms_mb": 4477.31,
+                "delta_rss_mb": 1316.4,
+                "delta_vms_mb": 1407.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.667238875999999,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 37.47,
+              "memory": {
+                "peak_rss_mb": 1811.21,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1716.3,
+                "avg_vms_mb": 4477.45,
+                "delta_rss_mb": 1348.4,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.7837664169999812,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 31.9,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6937304169999834,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.04,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6713323339999988,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 37.24,
+              "memory": {
+                "peak_rss_mb": 1781.21,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1697.21,
+                "avg_vms_mb": 4459.27,
+                "delta_rss_mb": 1318.4,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6997169580000104,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 35.73,
+              "memory": {
+                "peak_rss_mb": 1811.21,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1701.49,
+                "avg_vms_mb": 4459.27,
+                "delta_rss_mb": 1348.4,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6870962920000352,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.39,
+              "memory": {
+                "peak_rss_mb": 1811.21,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1701.49,
+                "avg_vms_mb": 4459.27,
+                "delta_rss_mb": 1348.4,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.7844507510000085,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 31.87,
+              "memory": {
+                "peak_rss_mb": 1811.09,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1699.19,
+                "avg_vms_mb": 4456.99,
+                "delta_rss_mb": 1348.27,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.7557210420000047,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 33.08,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6886747919999721,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.3,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6879815009999675,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.34,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.709727292000025,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 35.22,
+              "memory": {
+                "peak_rss_mb": 1809.21,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1698.96,
+                "avg_vms_mb": 4456.99,
+                "delta_rss_mb": 1346.4,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.9561537089999774,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 26.15,
+              "memory": {
+                "peak_rss_mb": 1783.34,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1693.22,
+                "avg_vms_mb": 4466.59,
+                "delta_rss_mb": 1320.52,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.7462835009999935,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 33.5,
+              "memory": {
+                "peak_rss_mb": 1745.34,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1690.97,
+                "avg_vms_mb": 4456.99,
+                "delta_rss_mb": 1282.52,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6836167499999988,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.57,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6909842080000317,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.18,
+              "memory": {
+                "peak_rss_mb": 1761.34,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1694.37,
+                "avg_vms_mb": 4459.27,
+                "delta_rss_mb": 1298.52,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.7475970840000059,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 33.44,
+              "memory": {
+                "peak_rss_mb": 1811.21,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1701.72,
+                "avg_vms_mb": 4472.99,
+                "delta_rss_mb": 1348.4,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.763550500000008,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 32.74,
+              "memory": {
+                "peak_rss_mb": 1683.21,
+                "peak_vms_mb": 4440.99,
+                "avg_rss_mb": 1683.21,
+                "avg_vms_mb": 4440.99,
+                "delta_rss_mb": 1220.39,
+                "delta_vms_mb": 1279.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 0.6894605409999599,
+              "total_tokens": 25,
+              "generated_tokens": 20,
+              "throughput": 36.26,
+              "memory": {
+                "peak_rss_mb": 1765.34,
+                "peak_vms_mb": 4568.99,
+                "avg_rss_mb": 1694.94,
+                "avg_vms_mb": 4459.27,
+                "delta_rss_mb": 1302.52,
+                "delta_vms_mb": 1407.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            }
+          ],
+          "prompt_id": "short_completion",
+          "category": "short"
+        },
+        {
+          "latency": {
+            "mean": 1.7822,
+            "median": 1.7568,
+            "std": 0.0898,
+            "min": 1.639,
+            "max": 1.9924,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 34.88,
+            "median": 35.29,
+            "std": 1.7,
+            "min": 31.12,
+            "max": 37.83
+          },
+          "avg_total_tokens": 62.0,
+          "avg_generated_tokens": 50.0,
+          "prompt": "Once upon a time in a distant land, there lived",
+          "max_tokens": 50,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 1.764408125999978,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.14,
+              "memory": {
+                "peak_rss_mb": 1799.59,
+                "peak_vms_mb": 4569.74,
+                "avg_rss_mb": 1689.92,
+                "avg_vms_mb": 4455.96,
+                "delta_rss_mb": 1336.78,
+                "delta_vms_mb": 1408.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.6878399180000088,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 36.73,
+              "memory": {
+                "peak_rss_mb": 1811.47,
+                "peak_vms_mb": 4569.74,
+                "avg_rss_mb": 1698.52,
+                "avg_vms_mb": 4464.33,
+                "delta_rss_mb": 1348.66,
+                "delta_vms_mb": 1408.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.992368166999995,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 31.12,
+              "memory": {
+                "peak_rss_mb": 1811.59,
+                "peak_vms_mb": 4569.74,
+                "avg_rss_mb": 1717.28,
+                "avg_vms_mb": 4480.14,
+                "delta_rss_mb": 1348.78,
+                "delta_vms_mb": 1408.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8421144590000154,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 33.66,
+              "memory": {
+                "peak_rss_mb": 1809.97,
+                "peak_vms_mb": 4569.74,
+                "avg_rss_mb": 1701.83,
+                "avg_vms_mb": 4461.95,
+                "delta_rss_mb": 1347.16,
+                "delta_vms_mb": 1408.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8658971680000036,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 33.23,
+              "memory": {
+                "peak_rss_mb": 1811.59,
+                "peak_vms_mb": 4569.74,
+                "avg_rss_mb": 1717.51,
+                "avg_vms_mb": 4482.16,
+                "delta_rss_mb": 1348.78,
+                "delta_vms_mb": 1408.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7456994170000257,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.52,
+              "memory": {
+                "peak_rss_mb": 1811.59,
+                "peak_vms_mb": 4569.74,
+                "avg_rss_mb": 1693.5,
+                "avg_vms_mb": 4455.99,
+                "delta_rss_mb": 1348.78,
+                "delta_vms_mb": 1408.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.926899542000001,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 32.18,
+              "memory": {
+                "peak_rss_mb": 1787.72,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1698.57,
+                "avg_vms_mb": 4461.19,
+                "delta_rss_mb": 1324.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7593108340000185,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.24,
+              "memory": {
+                "peak_rss_mb": 1811.72,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1690.83,
+                "avg_vms_mb": 4449.1,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7862108340000304,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 34.71,
+              "memory": {
+                "peak_rss_mb": 1811.72,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1701.39,
+                "avg_vms_mb": 4463.32,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7542903759999717,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.34,
+              "memory": {
+                "peak_rss_mb": 1811.72,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1719.17,
+                "avg_vms_mb": 4484.66,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.6816227510000203,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 36.87,
+              "memory": {
+                "peak_rss_mb": 1811.72,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1694.9,
+                "avg_vms_mb": 4464.58,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.6390297920000307,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 37.83,
+              "memory": {
+                "peak_rss_mb": 1769.84,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1688.78,
+                "avg_vms_mb": 4449.52,
+                "delta_rss_mb": 1307.03,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8124472920000017,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 34.21,
+              "memory": {
+                "peak_rss_mb": 1811.72,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1714.85,
+                "avg_vms_mb": 4477.54,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7396207910000498,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.64,
+              "memory": {
+                "peak_rss_mb": 1721.85,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1687.95,
+                "avg_vms_mb": 4463.32,
+                "delta_rss_mb": 1259.04,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.9349350429999959,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 32.04,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1702.23,
+                "avg_vms_mb": 4467.59,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.692351541999983,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 36.64,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1700.09,
+                "avg_vms_mb": 4464.58,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.724372083999981,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.96,
+              "memory": {
+                "peak_rss_mb": 1781.85,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1689.17,
+                "avg_vms_mb": 4449.1,
+                "delta_rss_mb": 1319.04,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7387075010000217,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.66,
+              "memory": {
+                "peak_rss_mb": 1781.1,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1689.13,
+                "avg_vms_mb": 4449.1,
+                "delta_rss_mb": 1318.29,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7354228350000085,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 35.73,
+              "memory": {
+                "peak_rss_mb": 1783.48,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1697.05,
+                "avg_vms_mb": 4463.32,
+                "delta_rss_mb": 1320.66,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8199703760000148,
+              "total_tokens": 62,
+              "generated_tokens": 50,
+              "throughput": 34.07,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4569.99,
+                "avg_rss_mb": 1690.83,
+                "avg_vms_mb": 4456.21,
+                "delta_rss_mb": 1348.91,
+                "delta_vms_mb": 1408.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            }
+          ],
+          "prompt_id": "medium_story",
+          "category": "medium"
+        },
+        {
+          "latency": {
+            "mean": 3.4395,
+            "median": 3.5685,
+            "std": 0.5338,
+            "min": 1.4585,
+            "max": 4.0612,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 31.21,
+            "median": 31.1,
+            "std": 1.85,
+            "min": 27.33,
+            "max": 36.34
+          },
+          "avg_total_tokens": 106.45,
+          "avg_generated_tokens": 95.45,
+          "prompt": "Write a detailed explanation of how machine learning works:",
+          "max_tokens": 100,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 3.865719127000034,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 28.71,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1697.63,
+                "avg_vms_mb": 4458.9,
+                "delta_rss_mb": 1348.92,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5881967090000444,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 30.93,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1702.3,
+                "avg_vms_mb": 4463.82,
+                "delta_rss_mb": 1348.92,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 4.061157543999968,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 27.33,
+              "memory": {
+                "peak_rss_mb": 1783.86,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1689.59,
+                "avg_vms_mb": 4461.22,
+                "delta_rss_mb": 1321.05,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5856683350000367,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 30.96,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1692.35,
+                "avg_vms_mb": 4456.71,
+                "delta_rss_mb": 1348.92,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.108479084999999,
+              "total_tokens": 100,
+              "generated_tokens": 89,
+              "throughput": 32.17,
+              "memory": {
+                "peak_rss_mb": 1811.73,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1694.44,
+                "avg_vms_mb": 4459.0,
+                "delta_rss_mb": 1348.92,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5761148349999985,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.04,
+              "memory": {
+                "peak_rss_mb": 1811.75,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1707.25,
+                "avg_vms_mb": 4470.93,
+                "delta_rss_mb": 1348.94,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.565432542999986,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.13,
+              "memory": {
+                "peak_rss_mb": 1811.75,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1694.14,
+                "avg_vms_mb": 4453.16,
+                "delta_rss_mb": 1348.94,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.6796587929999873,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 30.17,
+              "memory": {
+                "peak_rss_mb": 1811.79,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1697.08,
+                "avg_vms_mb": 4459.79,
+                "delta_rss_mb": 1348.98,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 2.6460646259999976,
+              "total_tokens": 89,
+              "generated_tokens": 78,
+              "throughput": 33.63,
+              "memory": {
+                "peak_rss_mb": 1811.79,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1701.28,
+                "avg_vms_mb": 4470.93,
+                "delta_rss_mb": 1348.98,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.8686742519999484,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 28.69,
+              "memory": {
+                "peak_rss_mb": 1811.79,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1701.05,
+                "avg_vms_mb": 4465.46,
+                "delta_rss_mb": 1348.98,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.6674177090000057,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 30.27,
+              "memory": {
+                "peak_rss_mb": 1811.94,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1697.46,
+                "avg_vms_mb": 4466.71,
+                "delta_rss_mb": 1349.12,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.4585320009999805,
+              "total_tokens": 53,
+              "generated_tokens": 42,
+              "throughput": 36.34,
+              "memory": {
+                "peak_rss_mb": 1807.94,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1704.48,
+                "avg_vms_mb": 4476.62,
+                "delta_rss_mb": 1345.12,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.605973918000018,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 30.78,
+              "memory": {
+                "peak_rss_mb": 1783.44,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1692.76,
+                "avg_vms_mb": 4460.27,
+                "delta_rss_mb": 1320.62,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.497237627000004,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.74,
+              "memory": {
+                "peak_rss_mb": 1796.07,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1687.14,
+                "avg_vms_mb": 4446.15,
+                "delta_rss_mb": 1333.25,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.390351334999991,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 32.74,
+              "memory": {
+                "peak_rss_mb": 1811.95,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1690.65,
+                "avg_vms_mb": 4450.02,
+                "delta_rss_mb": 1349.14,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.3837508340000113,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 32.8,
+              "memory": {
+                "peak_rss_mb": 1811.95,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1694.84,
+                "avg_vms_mb": 4457.55,
+                "delta_rss_mb": 1349.14,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5715392519999796,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.08,
+              "memory": {
+                "peak_rss_mb": 1811.95,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1699.87,
+                "avg_vms_mb": 4463.82,
+                "delta_rss_mb": 1349.14,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5550418349999973,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.22,
+              "memory": {
+                "peak_rss_mb": 1812.05,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1693.88,
+                "avg_vms_mb": 4453.16,
+                "delta_rss_mb": 1349.24,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5503324179999822,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.26,
+              "memory": {
+                "peak_rss_mb": 1812.05,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1700.44,
+                "avg_vms_mb": 4460.27,
+                "delta_rss_mb": 1349.24,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 3.5642464589999463,
+              "total_tokens": 111,
+              "generated_tokens": 100,
+              "throughput": 31.14,
+              "memory": {
+                "peak_rss_mb": 1812.05,
+                "peak_vms_mb": 4570.49,
+                "avg_rss_mb": 1697.39,
+                "avg_vms_mb": 4460.27,
+                "delta_rss_mb": 1349.24,
+                "delta_vms_mb": 1409.43,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            }
+          ],
+          "prompt_id": "long_generation",
+          "category": "long"
+        },
+        {
+          "latency": {
+            "mean": 1.732,
+            "median": 1.7459,
+            "std": 0.1363,
+            "min": 1.2252,
+            "max": 1.883,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 33.09,
+            "median": 33.22,
+            "std": 1.33,
+            "min": 30.8,
+            "max": 35.91
+          },
+          "avg_total_tokens": 57.15,
+          "avg_generated_tokens": 49.15,
+          "prompt": "def fibonacci(n):",
+          "max_tokens": 50,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 1.7902223340000774,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 32.4,
+              "memory": {
+                "peak_rss_mb": 1804.31,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1708.09,
+                "avg_vms_mb": 4478.54,
+                "delta_rss_mb": 1341.5,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.719745042999989,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 33.73,
+              "memory": {
+                "peak_rss_mb": 1788.05,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1693.24,
+                "avg_vms_mb": 4458.05,
+                "delta_rss_mb": 1325.23,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.776925500999937,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 32.64,
+              "memory": {
+                "peak_rss_mb": 1812.06,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1691.17,
+                "avg_vms_mb": 4450.1,
+                "delta_rss_mb": 1349.25,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7442031260000022,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 33.25,
+              "memory": {
+                "peak_rss_mb": 1787.81,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1689.82,
+                "avg_vms_mb": 4450.1,
+                "delta_rss_mb": 1325.0,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.840865751000024,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 31.51,
+              "memory": {
+                "peak_rss_mb": 1808.43,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1695.92,
+                "avg_vms_mb": 4456.46,
+                "delta_rss_mb": 1345.62,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7300305420000086,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 33.53,
+              "memory": {
+                "peak_rss_mb": 1802.06,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1698.96,
+                "avg_vms_mb": 4464.32,
+                "delta_rss_mb": 1339.25,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7442338760000666,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 33.25,
+              "memory": {
+                "peak_rss_mb": 1812.06,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1698.28,
+                "avg_vms_mb": 4457.21,
+                "delta_rss_mb": 1349.25,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7104363759999615,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 33.91,
+              "memory": {
+                "peak_rss_mb": 1812.06,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1698.07,
+                "avg_vms_mb": 4465.58,
+                "delta_rss_mb": 1349.25,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.5807365000000573,
+              "total_tokens": 55,
+              "generated_tokens": 47,
+              "throughput": 34.79,
+              "memory": {
+                "peak_rss_mb": 1804.18,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1705.95,
+                "avg_vms_mb": 4466.99,
+                "delta_rss_mb": 1341.37,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.6768561259999615,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 34.59,
+              "memory": {
+                "peak_rss_mb": 1812.06,
+                "peak_vms_mb": 4570.99,
+                "avg_rss_mb": 1697.12,
+                "avg_vms_mb": 4465.58,
+                "delta_rss_mb": 1349.25,
+                "delta_vms_mb": 1409.93,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.6743294179999566,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 34.64,
+              "memory": {
+                "peak_rss_mb": 1714.31,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1685.93,
+                "avg_vms_mb": 4450.71,
+                "delta_rss_mb": 1251.5,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8305592090000573,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 31.68,
+              "memory": {
+                "peak_rss_mb": 1812.19,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1697.04,
+                "avg_vms_mb": 4463.45,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7476441259999547,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 33.19,
+              "memory": {
+                "peak_rss_mb": 1812.19,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1703.41,
+                "avg_vms_mb": 4464.57,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8830457510000542,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 30.8,
+              "memory": {
+                "peak_rss_mb": 1684.18,
+                "peak_vms_mb": 4443.24,
+                "avg_rss_mb": 1684.18,
+                "avg_vms_mb": 4443.24,
+                "delta_rss_mb": 1221.37,
+                "delta_vms_mb": 1282.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.6854717100000016,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 34.41,
+              "memory": {
+                "peak_rss_mb": 1790.31,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1699.03,
+                "avg_vms_mb": 4473.36,
+                "delta_rss_mb": 1327.5,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8301475840000876,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 31.69,
+              "memory": {
+                "peak_rss_mb": 1780.31,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1693.25,
+                "avg_vms_mb": 4456.71,
+                "delta_rss_mb": 1317.5,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8469735840000112,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 31.4,
+              "memory": {
+                "peak_rss_mb": 1812.19,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1690.92,
+                "avg_vms_mb": 4449.98,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.2251832499999864,
+              "total_tokens": 44,
+              "generated_tokens": 36,
+              "throughput": 35.91,
+              "memory": {
+                "peak_rss_mb": 1754.31,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1689.58,
+                "avg_vms_mb": 4453.08,
+                "delta_rss_mb": 1291.5,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.7968013759999621,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 32.28,
+              "memory": {
+                "peak_rss_mb": 1812.19,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1691.29,
+                "avg_vms_mb": 4450.35,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.8048137509999833,
+              "total_tokens": 58,
+              "generated_tokens": 50,
+              "throughput": 32.14,
+              "memory": {
+                "peak_rss_mb": 1812.19,
+                "peak_vms_mb": 4571.24,
+                "avg_rss_mb": 1712.63,
+                "avg_vms_mb": 4471.68,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.18,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            }
+          ],
+          "prompt_id": "code_generation",
+          "category": "code"
+        },
+        {
+          "latency": {
+            "mean": 1.1201,
+            "median": 1.1228,
+            "std": 0.0688,
+            "min": 1.0042,
+            "max": 1.2496,
+            "count": 20
+          },
+          "throughput": {
+            "mean": 38.53,
+            "median": 38.3,
+            "std": 2.37,
+            "min": 34.41,
+            "max": 42.82
+          },
+          "avg_total_tokens": 43.0,
+          "avg_generated_tokens": 30.0,
+          "prompt": "Question: What is the capital of France?\nAnswer:",
+          "max_tokens": 30,
+          "iterations": 20,
+          "individual_results": [
+            {
+              "inference_time": 1.0716286670000272,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 40.13,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1704.75,
+                "avg_vms_mb": 4467.01,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0343057509999198,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 41.57,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1728.29,
+                "avg_vms_mb": 4513.56,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.1219577090000712,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 38.33,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1716.71,
+                "avg_vms_mb": 4486.41,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.173305959000004,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 36.65,
+              "memory": {
+                "peak_rss_mb": 1798.32,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1693.7,
+                "avg_vms_mb": 4454.41,
+                "delta_rss_mb": 1335.51,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.165395999999987,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 36.9,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1713.84,
+                "avg_vms_mb": 4475.74,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0992920840000124,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 39.12,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1711.12,
+                "avg_vms_mb": 4478.65,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.2093594169999733,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 35.56,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1694.86,
+                "avg_vms_mb": 4454.41,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0065710420000187,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 42.72,
+              "memory": {
+                "peak_rss_mb": 1684.19,
+                "peak_vms_mb": 4443.74,
+                "avg_rss_mb": 1684.19,
+                "avg_vms_mb": 4443.74,
+                "delta_rss_mb": 1221.38,
+                "delta_vms_mb": 1282.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0701057090000177,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 40.18,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1707.46,
+                "avg_vms_mb": 4478.65,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0042429169999423,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 42.82,
+              "memory": {
+                "peak_rss_mb": 1684.19,
+                "peak_vms_mb": 4443.74,
+                "avg_rss_mb": 1684.19,
+                "avg_vms_mb": 4443.74,
+                "delta_rss_mb": 1221.38,
+                "delta_vms_mb": 1282.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0622699580000017,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 40.48,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1718.02,
+                "avg_vms_mb": 4478.65,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.1672270010000148,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 36.84,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1694.86,
+                "avg_vms_mb": 4454.41,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.195028126000011,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 35.98,
+              "memory": {
+                "peak_rss_mb": 1782.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1702.88,
+                "avg_vms_mb": 4475.74,
+                "delta_rss_mb": 1319.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0932164170000078,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 39.33,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1695.83,
+                "avg_vms_mb": 4455.38,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.0667729169999802,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 40.31,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1714.98,
+                "avg_vms_mb": 4478.65,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.1315004589999944,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 38.0,
+              "memory": {
+                "peak_rss_mb": 1684.19,
+                "peak_vms_mb": 4443.74,
+                "avg_rss_mb": 1684.19,
+                "avg_vms_mb": 4443.74,
+                "delta_rss_mb": 1221.38,
+                "delta_vms_mb": 1282.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.224814083999945,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 35.11,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1713.12,
+                "avg_vms_mb": 4473.28,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.1323309590000008,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 37.97,
+              "memory": {
+                "peak_rss_mb": 1802.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1694.03,
+                "avg_vms_mb": 4454.41,
+                "delta_rss_mb": 1339.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.1235765839999203,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 38.27,
+              "memory": {
+                "peak_rss_mb": 1812.2,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1713.47,
+                "avg_vms_mb": 4475.74,
+                "delta_rss_mb": 1349.38,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            },
+            {
+              "inference_time": 1.249576708999939,
+              "total_tokens": 43,
+              "generated_tokens": 30,
+              "throughput": 34.41,
+              "memory": {
+                "peak_rss_mb": 1686.18,
+                "peak_vms_mb": 4571.74,
+                "avg_rss_mb": 1684.34,
+                "avg_vms_mb": 4453.58,
+                "delta_rss_mb": 1223.37,
+                "delta_vms_mb": 1410.68,
+                "baseline_rss_mb": 462.81,
+                "baseline_vms_mb": 3161.06
+              }
+            }
+          ],
+          "prompt_id": "qa_format",
+          "category": "qa"
+        }
+      ],
+      "overall_stats": {
+        "latency": {
+          "mean": 1.7597,
+          "median": 1.732,
+          "std": 0.9277,
+          "min": 0.7247,
+          "max": 3.4395,
+          "count": 5
+        },
+        "memory": {
+          "baseline_mb": 1665.7,
+          "peak_rss_mb": 1812.2,
+          "avg_peak_rss_mb": 1785.9
+        },
+        "throughput": {
+          "mean": 34.49,
+          "min": 31.21,
+          "max": 38.53
+        }
+      }
+    }
+  },
+  "long_context_results": {
+    "gpt2-small": {
+      "model_id": "gpt2",
+      "load_time": 1.86,
+      "prompt_results": []
+    },
+    "jamba-tiny": {
+      "model_id": "ai21labs/Jamba-tiny-dev",
+      "load_time": 1.3,
+      "prompt_results": [
+        {
+          "prompt_id": "context_1k",
+          "input_tokens": 1447,
+          "avg_inference_time": 9.52,
+          "avg_throughput": 173.36,
+          "peak_memory_mb": 2176.5
+        },
+        {
+          "prompt_id": "context_2k",
+          "input_tokens": 2059,
+          "avg_inference_time": 9.98,
+          "avg_throughput": 226.43,
+          "peak_memory_mb": 2338.93
+        },
+        {
+          "prompt_id": "context_4k",
+          "input_tokens": 3902,
+          "avg_inference_time": 13.1,
+          "avg_throughput": 313.36,
+          "peak_memory_mb": 2823.79
+        },
+        {
+          "prompt_id": "context_8k",
+          "input_tokens": 9355,
+          "avg_inference_time": 19.54,
+          "avg_throughput": 488.1,
+          "peak_memory_mb": 4344.09
+        }
+      ]
+    }
+  },
+  "key_insights": {
+    "short_context_winner": "gpt2-small",
+    "long_context_winner": "jamba-tiny",
+    "crossover_point": "2-4K tokens",
+    "gpt2_scaling": "Quadratic O(n\u00b2)",
+    "jamba_scaling": "Linear O(n)"
+  }
+}
