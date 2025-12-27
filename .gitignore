@@ -35,11 +35,17 @@ env/
 *~
 .DS_Store
 
-# Model cache
+# Model cache (downloaded weights, not source code)
 .cache/
-models/
 *.bin
 *.safetensors
+*.msgpack
+*.h5
+checkpoint-*/
+huggingface/
+
+# Results (exclude additional generated benchmarks)
+results/*
 
 # Logs
 *.log

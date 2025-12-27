@@ -13,7 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 FROM base AS models
 
 ENV HF_HOME=/app/.cache/huggingface
-ENV TRANSFORMERS_CACHE=/app/.cache/huggingface
 
 RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; \
     print('Downloading GPT-2...'); \
@@ -21,7 +20,7 @@ RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; \
     AutoTokenizer.from_pretrained('gpt2'); \
     print('GPT-2 downloaded successfully')"
 
-RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; print('Downloading Jamba-tiny-dev...'); AutoModelForCausalLM.from_pretrained('ai21labs/Jamba-tiny-dev', use_mamba_kernels=False, trust_remote_code=False); AutoTokenizer.from_pretrained('ai21labs/Jamba-tiny-dev'); print('Jamba-tiny-dev downloaded successfully')" || echo "Warning: Jamba download failed, will retry at runtime"
+RUN python -c "from transformers import AutoModelForCausalLM, AutoTokenizer; print('Downloading Jamba-tiny-dev...'); AutoModelForCausalLM.from_pretrained('ai21labs/Jamba-tiny-dev', use_mamba_kernels=False, trust_remote_code=False); AutoTokenizer.from_pretrained('ai21labs/Jamba-tiny-dev'); print('Jamba-tiny-dev downloaded successfully')" 2>/dev/null || echo "Warning: Jamba download failed, will retry at runtime"
 
 FROM models AS final
 
@@ -35,7 +34,6 @@ RUN mkdir -p results
 
 ENV PYTHONUNBUFFERED=1
 ENV HF_HOME=/app/.cache/huggingface
-ENV TRANSFORMERS_CACHE=/app/.cache/huggingface
 
 VOLUME ["/app/results"]
 

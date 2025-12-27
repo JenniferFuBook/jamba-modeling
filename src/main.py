@@ -27,8 +27,9 @@ import sys
 import logging                   # For tracking benchmark progress
 import gc                        # For memory management between runs
 import time                      # For high-precision timing with perf_counter()
-from datetime import datetime     # For timestamping results
-from pathlib import Path          # For cross-platform file paths
+import warnings                  # For suppressing expected warnings
+from datetime import datetime    # For timestamping results
+from pathlib import Path         # For cross-platform file paths
 from typing import Dict, Any, List, Tuple
 
 # Third-party imports
@@ -43,7 +44,7 @@ from .models.jamba_model import JambaModel    # Jamba hybrid SSM-Transformer imp
 # Local imports - Benchmarking infrastructure
 from .benchmarking.benchmark_runner import BenchmarkRunner  # Manages short context benchmarks
 from .benchmarking.memory_tracker import MemoryTracker      # Tracks peak memory usage
-from .benchmarking.metrics import Metrics                    # Calculates statistics
+from .benchmarking.metrics import Metrics                   # Calculates statistics
 
 # Local imports - Utilities
 from .utils.logger import setup_logger    # Configures logging
@@ -59,6 +60,12 @@ except ImportError:
 
 # Initialize logger for this module
 logger = setup_logger(__name__, logging.INFO)
+
+# Suppress expected warnings when using CPU inference
+warnings.filterwarnings('ignore', message='.*fast path is not available.*')  # Mamba kernels (CPU mode)
+warnings.filterwarnings('ignore', message='.*attention mask is not set.*')   # Attention mask inference
+warnings.filterwarnings('ignore', category=FutureWarning, module='transformers')  # TRANSFORMERS_CACHE deprecation
+warnings.filterwarnings('ignore', message='.*Token indices sequence length is longer than.*')  # Context length (we handle truncation)
 
 
 # ============================================================================
@@ -183,9 +190,10 @@ class UnifiedBenchmark:
             - load_time: Time to load model into memory
             - prompt_results: Detailed results for each test prompt
         """
-        logger.info("\n" + "=" * 100)
+        logger.info("")
+        logger.info("=" * 100)
         logger.info("PART 1: SHORT-CONTEXT BENCHMARK (20-100 tokens)")
-        logger.info("=" * 100 + "\n")
+        logger.info("=" * 100)
 
         device_config = self.models_config.get('device', {})
         results = {}
@@ -245,9 +253,10 @@ class UnifiedBenchmark:
             - load_time: Model loading time
             - model_id: Hugging Face model identifier
         """
-        logger.info("\n" + "=" * 100)
+        logger.info("")
+        logger.info("=" * 100)
         logger.info("PART 2: LONG-CONTEXT BENCHMARK (1K-8K tokens)")
-        logger.info("=" * 100 + "\n")
+        logger.info("=" * 100)
 
         device_config = self.models_config.get('device', {})
         results = {}
@@ -314,7 +323,23 @@ class UnifiedBenchmark:
 
         logger.info(f"  Testing '{prompt_id}' (~{estimated_tokens} tokens)...")
 
-        actual_input_tokens = len(model.tokenizer.encode(prompt_text))
+        # Get model's maximum sequence length
+        model_max_length = getattr(model.tokenizer, 'model_max_length', None)
+        if model_max_length is None or model_max_length > 1e6:  # Some models have unrealistic defaults
+            model_max_length = 1024  # Safe default
+
+        # Tokenize and check length
+        input_ids = model.tokenizer.encode(prompt_text)
+        actual_input_tokens = len(input_ids)
+
+        # Truncate if needed
+        truncated = False
+        if actual_input_tokens > model_max_length:
+            logger.warning(f"    Input ({actual_input_tokens} tokens) exceeds model max ({model_max_length}), truncating...")
+            input_ids = input_ids[:model_max_length]
+            prompt_text = model.tokenizer.decode(input_ids, skip_special_tokens=True)
+            actual_input_tokens = model_max_length
+            truncated = True
 
         # Warmup
         try:
@@ -370,6 +395,7 @@ class UnifiedBenchmark:
             'avg_inference_time': round(avg_inference_time, 2),
             'avg_throughput': round(avg_throughput, 2),
             'peak_memory_mb': round(max_memory, 2),
+            'truncated': truncated,
         }
 
     # ========================================================================
@@ -890,10 +916,14 @@ class UnifiedBenchmark:
         print("-" * 100)
 
         long_data = []
+        has_truncated = False
         for model_name, model_data in long_results.items():
             for prompt_result in model_data.get('prompt_results', []):
+                truncated_marker = "*" if prompt_result.get('truncated', False) else ""
+                if prompt_result.get('truncated', False):
+                    has_truncated = True
                 long_data.append([
-                    model_name,
+                    model_name + truncated_marker,
                     prompt_result['prompt_id'],
                     f"{prompt_result['input_tokens']:,}",
                     f"{prompt_result['avg_inference_time']:.2f}",
@@ -904,6 +934,9 @@ class UnifiedBenchmark:
         print(tabulate(long_data,
                       headers=["Model", "Prompt", "Input Tokens", "Latency (s)", "Throughput", "Memory (MB)"],
                       tablefmt="grid"))
+
+        if has_truncated:
+            print("\n* Input truncated to model's maximum context length (1024 tokens for GPT-2)")
 
         # Part 3: Scaling analysis
         print("\n\nPART 3: SCALING ANALYSIS (The Key Insight)")
@@ -989,10 +1022,10 @@ class UnifiedBenchmark:
 
     def run(self):
         """Run the complete unified benchmark."""
+        logger.info("")
         logger.info("🔥" * 50)
-        logger.info("UNIFIED BENCHMARK: GPT-2 vs JAMBA")
-        logger.info("Demonstrating where each model excels")
-        logger.info("🔥" * 50 + "\n")
+        logger.info("🔥 UNIFIED BENCHMARK: GPT-2 vs JAMBA - Demonstrating where each model excels")
+        logger.info("🔥" * 50)
 
         # Run both benchmarks
         short_results = self.run_short_context_benchmark()
