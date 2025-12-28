@@ -19,10 +19,31 @@ import json
 import time
 import warnings
 import argparse
+import sys
+import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Suppress expected Mamba kernel warning (we're intentionally using CPU)
 warnings.filterwarnings('ignore', message='.*fast path is not available.*')
+warnings.filterwarnings('ignore', message='.*Mamba kernels.*')
+
+# Also suppress C++ level warnings by redirecting stderr during imports
+def suppress_stderr():
+    """Context manager to suppress stderr output."""
+    class SuppressStderr:
+        def __enter__(self):
+            self.stderr_fd = sys.stderr.fileno()
+            self.old_stderr = os.dup(self.stderr_fd)
+            self.devnull = open(os.devnull, 'w')
+            os.dup2(self.devnull.fileno(), self.stderr_fd)
+            return self
+
+        def __exit__(self, *args):
+            os.dup2(self.old_stderr, self.stderr_fd)
+            os.close(self.old_stderr)
+            self.devnull.close()
+
+    return SuppressStderr()
 
 # ============================================================================
 # CONFIGURATION
@@ -96,12 +117,14 @@ start_load = time.perf_counter()
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_ID,
-    device_map='cpu',
-    use_mamba_kernels=USE_MAMBA_KERNELS,
-    trust_remote_code=False
-)
+# Suppress C++ warnings during model loading
+with suppress_stderr():
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_ID,
+        device_map='cpu',
+        use_mamba_kernels=USE_MAMBA_KERNELS,
+        trust_remote_code=False
+    )
 
 load_time = time.perf_counter() - start_load
 print(f"✓ Model loaded in {load_time:.2f} seconds")
@@ -127,16 +150,17 @@ try:
     # Tokenize input with attention mask
     inputs = tokenizer(prompt_text, return_tensors='pt', return_attention_mask=True)
 
-    # Generate
-    outputs = model.generate(
-        inputs['input_ids'],
-        attention_mask=inputs['attention_mask'],
-        max_new_tokens=max_tokens,
-        temperature=0.7,
-        top_p=0.9,
-        do_sample=True,
-        pad_token_id=tokenizer.eos_token_id
-    )
+    # Generate (suppress any C++ warnings during first inference)
+    with suppress_stderr():
+        outputs = model.generate(
+            inputs['input_ids'],
+            attention_mask=inputs['attention_mask'],
+            max_new_tokens=max_tokens,
+            temperature=0.7,
+            top_p=0.9,
+            do_sample=True,
+            pad_token_id=tokenizer.eos_token_id
+        )
 
     # Decode output
     full_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
